@@ -224,6 +224,7 @@ async def analyze_data(request: Request):
             # Catch any other unexpected errors during execution
             return JSONResponse(status_code=500, content={"error": f"An unexpected error occurred during execution: {str(e)}"})
 
-if __name__ == "__main__":  # Fixed __name__
+if __name__ == "__main__":
     port = int(os.getenv("PORT", 8000))  # Use Railway's PORT environment variable
     uvicorn.run(app, host="0.0.0.0", port=port)
+
